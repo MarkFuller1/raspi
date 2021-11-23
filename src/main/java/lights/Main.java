@@ -17,6 +17,7 @@ public class Main {
         pin.low();
 
         pin.pulse(2000);
+        // a comment
 
         gpioController.shutdown();
     }
