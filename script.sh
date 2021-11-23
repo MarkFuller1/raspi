@@ -11,3 +11,4 @@ git commit -am "commiit:"+time
 set var=myvar;
 call "c:\input2.cmd" %var%.
 
+
