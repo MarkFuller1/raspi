@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="raspi" />
+      <artifact name="ras-lights:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd140b9-5303-4c00-8b0b-2f8fa87861b4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ras_lights_jar/ras-lights.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/raspi/raspi.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ras-lights-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ras-lights-1.0-SNAPSHOT.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +58,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="JAR Application.Run Jar, commit">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="lights.Main" />
       <module name="ras-lights" />
@@ -172,22 +174,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="420" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1637643339996" />
-    <state width="1513" height="398" key="GridCell.Tab.0.bottom" timestamp="1637643246208">
+    <state width="1513" height="398" key="GridCell.Tab.0.bottom" timestamp="1637645122184">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1637643246208" />
-    <state width="1513" height="398" key="GridCell.Tab.0.center" timestamp="1637643246208">
+    <state width="1513" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1637645122184" />
+    <state width="1513" height="398" key="GridCell.Tab.0.center" timestamp="1637645122184">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1637643246208" />
-    <state width="1513" height="398" key="GridCell.Tab.0.left" timestamp="1637643246208">
+    <state width="1513" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1637645122184" />
+    <state width="1513" height="398" key="GridCell.Tab.0.left" timestamp="1637645122184">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1637643246208" />
-    <state width="1513" height="398" key="GridCell.Tab.0.right" timestamp="1637643246208">
+    <state width="1513" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1637645122184" />
+    <state width="1513" height="398" key="GridCell.Tab.0.right" timestamp="1637645122184">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1637643246208" />
+    <state width="1513" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1637645122184" />
     <state x="170" y="358" key="Maven.ArtifactSearchDialog" timestamp="1637634575541">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
