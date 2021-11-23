@@ -1,8 +1,10 @@
 echo %cd%
 
-git add *
+#git add *
 
-git commit -am "commiit:"%TIME%
+time=%TIME%
 
-git push origin master
+git commit -am "commiit:"+time
+
+#git push origin master
 

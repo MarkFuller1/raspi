@@ -51,7 +51,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="JAR Application.Run Jar, commit">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -145,30 +145,30 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="420" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1637638305262" />
-    <state width="1513" height="400" key="GridCell.Tab.0.bottom" timestamp="1637638347799">
+    <state width="1513" height="400" key="GridCell.Tab.0.bottom" timestamp="1637638522081">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1637638347799" />
-    <state width="1513" height="400" key="GridCell.Tab.0.center" timestamp="1637638347799">
+    <state width="1513" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1637638522081" />
+    <state width="1513" height="400" key="GridCell.Tab.0.center" timestamp="1637638522081">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="400" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1637638347799" />
-    <state width="1513" height="400" key="GridCell.Tab.0.left" timestamp="1637638347799">
+    <state width="1513" height="400" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1637638522081" />
+    <state width="1513" height="400" key="GridCell.Tab.0.left" timestamp="1637638522081">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="400" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1637638347799" />
-    <state width="1513" height="400" key="GridCell.Tab.0.right" timestamp="1637638347799">
+    <state width="1513" height="400" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1637638522081" />
+    <state width="1513" height="400" key="GridCell.Tab.0.right" timestamp="1637638522081">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="400" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1637638347799" />
+    <state width="1513" height="400" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1637638522081" />
     <state x="170" y="358" key="Maven.ArtifactSearchDialog" timestamp="1637634575541">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="170" y="358" key="Maven.ArtifactSearchDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637634575541" />
-    <state x="280" y="345" key="SettingsEditor" timestamp="1637638172821">
+    <state x="280" y="345" key="SettingsEditor" timestamp="1637638492398">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="280" y="345" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1637638172821" />
+    <state x="280" y="345" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1637638492398" />
     <state x="298" y="392" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1637635413387">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
