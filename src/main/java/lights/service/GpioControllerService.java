@@ -13,7 +13,7 @@ public class GpioControllerService {
     public void flash() {
 
         // create a digital output instance using the default digital output provider
-        var output = pi4j.dout().create("18");
+        var output = pi4j.dout().create("8");
 
         if (output.isHigh()) {
             output.low();
