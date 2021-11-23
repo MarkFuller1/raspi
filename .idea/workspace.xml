@@ -7,6 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd140b9-5303-4c00-8b0b-2f8fa87861b4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/out/artifacts/ras_lights_jar/ras-lights.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,11 +47,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts/ras_lights_jar/ras-lights.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/script.sh" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RunManager" selected="JAR Application.Run Jar, commit">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -80,7 +82,7 @@
         <option name="BuildArtifacts" enabled="true">
           <artifact name="ras-lights:jar" />
         </option>
-        <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_git commit" />
+        <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_shell script" />
       </method>
     </configuration>
     <list>
@@ -123,58 +125,58 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="420" y="508" key="#BuildArtifactsBeforeRunChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1637636077166" />
-    <state x="94" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1637637406901">
+    <state x="94" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1637638317048">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="94" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637637406901" />
-    <state x="420" y="408" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1637637310628">
+    <state x="94" y="358" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637638317048" />
+    <state x="420" y="408" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1637637867069">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="420" y="408" key="#com.intellij.ide.macro.MacrosDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637637310628" />
+    <state x="420" y="408" key="#com.intellij.ide.macro.MacrosDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637637867069" />
     <state x="530" y="554" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1637635338602">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="530" y="554" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637635338602" />
-    <state x="409" y="533" width="463" height="487" key="#com.intellij.tools.ToolEditorDialog" timestamp="1637637401162">
+    <state x="409" y="533" width="463" height="487" key="#com.intellij.tools.ToolEditorDialog" timestamp="1637638309189">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="409" y="533" width="463" height="487" key="#com.intellij.tools.ToolEditorDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637637401162" />
-    <state x="420" y="458" key="FileChooserDialogImpl" timestamp="1637636020540">
+    <state x="409" y="533" width="463" height="487" key="#com.intellij.tools.ToolEditorDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637638309189" />
+    <state x="420" y="458" key="FileChooserDialogImpl" timestamp="1637638305262">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="420" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1637636020540" />
-    <state width="1513" height="400" key="GridCell.Tab.0.bottom" timestamp="1637637410200">
+    <state x="420" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1637638305262" />
+    <state width="1513" height="400" key="GridCell.Tab.0.bottom" timestamp="1637638347799">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1637637410200" />
-    <state width="1513" height="400" key="GridCell.Tab.0.center" timestamp="1637637410199">
+    <state width="1513" height="400" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1637638347799" />
+    <state width="1513" height="400" key="GridCell.Tab.0.center" timestamp="1637638347799">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="400" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1637637410199" />
-    <state width="1513" height="400" key="GridCell.Tab.0.left" timestamp="1637637410199">
+    <state width="1513" height="400" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1637638347799" />
+    <state width="1513" height="400" key="GridCell.Tab.0.left" timestamp="1637638347799">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="400" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1637637410199" />
-    <state width="1513" height="400" key="GridCell.Tab.0.right" timestamp="1637637410199">
+    <state width="1513" height="400" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1637638347799" />
+    <state width="1513" height="400" key="GridCell.Tab.0.right" timestamp="1637638347799">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="400" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1637637410199" />
+    <state width="1513" height="400" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1637638347799" />
     <state x="170" y="358" key="Maven.ArtifactSearchDialog" timestamp="1637634575541">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="170" y="358" key="Maven.ArtifactSearchDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637634575541" />
-    <state x="280" y="345" key="SettingsEditor" timestamp="1637635608435">
+    <state x="280" y="345" key="SettingsEditor" timestamp="1637638172821">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="280" y="345" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1637635608435" />
+    <state x="280" y="345" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1637638172821" />
     <state x="298" y="392" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1637635413387">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="298" y="392" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1637635413387" />
-    <state x="535" y="438" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" timestamp="1637637402094">
+    <state x="535" y="438" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" timestamp="1637638310634">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="535" y="438" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey/0.0.2560.1400@0.0.2560.1400" timestamp="1637637402094" />
+    <state x="535" y="438" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey/0.0.2560.1400@0.0.2560.1400" timestamp="1637638310634" />
     <state x="303" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1637634868007">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
