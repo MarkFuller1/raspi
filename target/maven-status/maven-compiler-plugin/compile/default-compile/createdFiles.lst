@@ -1,1 +1,4 @@
+lights\config\GpioConfig.class
+lights\service\GpioControllerService.class
 lights\Main.class
+lights\controller\LightsController.class

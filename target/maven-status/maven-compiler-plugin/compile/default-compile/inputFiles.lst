@@ -1,1 +1,4 @@
 C:\Users\Mark Fuller\source\ras-lights\src\main\java\lights\Main.java
+C:\Users\Mark Fuller\source\ras-lights\src\main\java\lights\controller\LightsController.java
+C:\Users\Mark Fuller\source\ras-lights\src\main\java\lights\config\GpioConfig.java
+C:\Users\Mark Fuller\source\ras-lights\src\main\java\lights\service\GpioControllerService.java
