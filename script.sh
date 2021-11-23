@@ -4,7 +4,7 @@ echo $PWD
 
 git add *
 
-commit_time=date+"%T"
+commit_time=$(date+"%T")
 
 git commit -am "commiit:"_$commit_time
 
