@@ -8,6 +8,11 @@
     <artifactId>ras-lights</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+    </properties>
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.pi4j/pi4j-core -->
         <dependency>
