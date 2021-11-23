@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-echo %cd%
+echo $PWD
 
 git add *
 
-commit_time=%TIME%
+commit_time=date+"%T"
 
 git commit -am "commiit:"_$commit_time
 
