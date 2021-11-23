@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abd140b9-5303-4c00-8b0b-2f8fa87861b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/bashsupport_project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/raspi.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/raspi.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +46,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/bash.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -79,7 +79,7 @@
       <method v="2">
         <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="ras-lights:jar" />
+          <artifact name="raspi" />
         </option>
         <option name="Sh.BeforeRunTask" RUN_CONFIG_NAME="Unnamed" RUN_CONFIG_TYPE="ShConfigurationType" />
       </method>
@@ -139,18 +139,18 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="420" y="508" key="#BuildArtifactsBeforeRunChooser" timestamp="1637636077166">
+    <state x="420" y="508" key="#BuildArtifactsBeforeRunChooser" timestamp="1637642755367">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="420" y="508" key="#BuildArtifactsBeforeRunChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1637636077166" />
+    <state x="420" y="508" key="#BuildArtifactsBeforeRunChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1637642755367" />
     <state x="371" y="362" key="#Notifications" timestamp="1637638833339">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="371" y="362" key="#Notifications/0.0.2560.1400@0.0.2560.1400" timestamp="1637638833339" />
-    <state x="279" y="101" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1637641224239">
+    <state x="279" y="101" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1637642757327">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="279" y="101" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637641224239" />
+    <state x="279" y="101" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637642757327" />
     <state x="546" y="507" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1637638651578">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -159,42 +159,42 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="420" y="408" key="#com.intellij.ide.macro.MacrosDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637637867069" />
-    <state x="530" y="554" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1637635338602">
+    <state x="530" y="554" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1637642691472">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="530" y="554" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637635338602" />
+    <state x="530" y="554" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637642691472" />
     <state x="409" y="533" width="463" height="487" key="#com.intellij.tools.ToolEditorDialog" timestamp="1637638309189">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="409" y="533" width="463" height="487" key="#com.intellij.tools.ToolEditorDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637638309189" />
-    <state x="420" y="458" key="FileChooserDialogImpl" timestamp="1637640943178">
+    <state x="420" y="458" key="FileChooserDialogImpl" timestamp="1637642686100">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="420" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1637640943178" />
-    <state width="1513" height="398" key="GridCell.Tab.0.bottom" timestamp="1637641199815">
+    <state x="420" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1637642686100" />
+    <state width="1513" height="398" key="GridCell.Tab.0.bottom" timestamp="1637642768689">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1637641199815" />
-    <state width="1513" height="398" key="GridCell.Tab.0.center" timestamp="1637641199815">
+    <state width="1513" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1637642768689" />
+    <state width="1513" height="398" key="GridCell.Tab.0.center" timestamp="1637642768688">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1637641199815" />
-    <state width="1513" height="398" key="GridCell.Tab.0.left" timestamp="1637641199815">
+    <state width="1513" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1637642768688" />
+    <state width="1513" height="398" key="GridCell.Tab.0.left" timestamp="1637642768688">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1637641199815" />
-    <state width="1513" height="398" key="GridCell.Tab.0.right" timestamp="1637641199815">
+    <state width="1513" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1637642768688" />
+    <state width="1513" height="398" key="GridCell.Tab.0.right" timestamp="1637642768688">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1513" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1637641199815" />
+    <state width="1513" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1637642768688" />
     <state x="170" y="358" key="Maven.ArtifactSearchDialog" timestamp="1637634575541">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="170" y="358" key="Maven.ArtifactSearchDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637634575541" />
-    <state x="348" y="370" key="SettingsEditor" timestamp="1637642607110">
+    <state x="348" y="370" key="SettingsEditor" timestamp="1637642745705">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="348" y="370" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1637642607110" />
+    <state x="348" y="370" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1637642745705" />
     <state x="298" y="392" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1637639218346">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
