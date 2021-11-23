@@ -6,7 +6,7 @@ git add *
 
 commit_time=$(date+"%T")
 
-git commit -am "commiit:"_$commit_time
+git commit -am "commit:"${commit_time}
 
 git push origin master
 
