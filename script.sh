@@ -1,14 +1,10 @@
 echo %cd%
 
-#git add *
+git add *
 
-time=%TIME%
+set commit_time=%TIME%
 
-git commit -am "commiit:"+time
+git commit -am "commiit:"_%commit_time%
 
-#git push origin master
-
-@echo off
-set /p id=Enter ID:
-echo %id%
+git push origin master
 
