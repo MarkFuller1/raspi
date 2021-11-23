@@ -1,125 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="ras-lights:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="abd140b9-5303-4c00-8b0b-2f8fa87861b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lights/config/GpioConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lights/controller/LightsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lights/service/GpioControllerService.java" afterDir="false" />
+    <list default="true" id="12969b80-39d7-41de-8792-3185e71c4eab" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ras_lights_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/raspi.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/bashsupport_project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ras_lights_jar/ras-lights.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lights/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lights/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lights/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lights/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ras-lights.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lights/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lights/config/GpioConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lights/controller/LightsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lights/service/GpioControllerService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ras-lights-1.0-SNAPSHOT-jar-with-dependencies.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ras-lights-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ras-lights-1.0-SNAPSHOT.jar.original" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-        <option name="jdkForImporter" value="13" />
-        <option name="vmOptionsForImporter" value="-Xmx768m" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="21Ih5ELMtQfBunDf9vJLLZRR7gK" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
+  <component name="ProjectId" id="21KQIknMYtJ6v5tzkKk3gXAib9d" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/target/ras-lights-1.0-SNAPSHOT.jar" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lights.Main" />
-      <module name="ras-lights" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lights.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean" />
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="ras-lights:jar" />
-        </option>
-        <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_git commit" />
-      </method>
-    </configuration>
-    <configuration name="Run Jar, commit" type="JarApplication">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/target/ras-lights-1.0-SNAPSHOT.jar" />
-      <option name="WORKING_DIRECTORY" value="C:\Users\Mark Fuller\source\ras-lights" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="11" />
-      <method v="2">
-        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="clean" />
-        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="prepare-package package" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ShConfigurationType">
-      <option name="SCRIPT_PATH" value="" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="" />
-      <option name="INTERPRETER_PATH" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <RunnerSettings bashdbVersion="Automatic" bashPathMapper="Automatic" RunnerId="pro.bashsupport.shDebugRunner" />
-      <method v="2" />
-    </configuration>
-    <configuration name="raspi-script" type="ShConfigurationType">
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/script.sh" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INTERPRETER_PATH" value="C:/Program Files/Git/bin/bash.exe" />
-      <option name="INTERPRETER_OPTIONS" value="-login -i --" />
-      <RunnerSettings bashdbVersion="Automatic" bashPathMapper="Automatic" RunnerId="pro.bashsupport.shDebugRunner" />
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JAR Application.Run Jar, commit" />
-      <item itemvalue="Shell Script.raspi-script" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -138,82 +59,18 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="abd140b9-5303-4c00-8b0b-2f8fa87861b4" name="Default Changelist" comment="" />
-      <created>1637634323542</created>
+      <changelist id="12969b80-39d7-41de-8792-3185e71c4eab" name="Default Changelist" comment="" />
+      <created>1637687221279</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1637634323542</updated>
+      <updated>1637687221279</updated>
     </task>
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="420" y="508" key="#BuildArtifactsBeforeRunChooser" timestamp="1637642755367">
+    <state x="295" y="314" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1637687433917">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="420" y="508" key="#BuildArtifactsBeforeRunChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1637642755367" />
-    <state x="371" y="362" key="#Notifications" timestamp="1637638833339">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="371" y="362" key="#Notifications/0.0.2560.1400@0.0.2560.1400" timestamp="1637638833339" />
-    <state x="279" y="101" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1637643342189">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="279" y="101" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637643342189" />
-    <state x="546" y="507" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1637638651578">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="546" y="507" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1637638651578" />
-    <state x="420" y="408" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1637637867069">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="420" y="408" key="#com.intellij.ide.macro.MacrosDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637637867069" />
-    <state x="530" y="554" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1637642691472">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="530" y="554" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637642691472" />
-    <state x="409" y="533" width="463" height="487" key="#com.intellij.tools.ToolEditorDialog" timestamp="1637638309189">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="409" y="533" width="463" height="487" key="#com.intellij.tools.ToolEditorDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637638309189" />
-    <state x="420" y="458" key="FileChooserDialogImpl" timestamp="1637643339996">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="420" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1637643339996" />
-    <state width="1513" height="398" key="GridCell.Tab.0.bottom" timestamp="1637645122184">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1513" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1637645122184" />
-    <state width="1513" height="398" key="GridCell.Tab.0.center" timestamp="1637645122184">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1513" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1637645122184" />
-    <state width="1513" height="398" key="GridCell.Tab.0.left" timestamp="1637645122184">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1513" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1637645122184" />
-    <state width="1513" height="398" key="GridCell.Tab.0.right" timestamp="1637645122184">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1513" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1637645122184" />
-    <state x="170" y="358" key="Maven.ArtifactSearchDialog" timestamp="1637634575541">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="170" y="358" key="Maven.ArtifactSearchDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1637634575541" />
-    <state x="348" y="370" key="SettingsEditor" timestamp="1637642745705">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="348" y="370" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1637642745705" />
-    <state x="298" y="392" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1637685367116">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="298" y="392" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1637685367116" />
-    <state x="535" y="438" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" timestamp="1637640426967">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="535" y="438" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey/0.0.2560.1400@0.0.2560.1400" timestamp="1637640426967" />
-    <state x="303" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1637634868007">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="303" y="320" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1637634868007" />
+    <state x="295" y="314" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1637687433917" />
   </component>
 </project>
