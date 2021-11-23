@@ -1,6 +1,5 @@
 package lights.controller;
 
-import com.pi4j.io.gpio.GpioController;
 import lights.service.GpioControllerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

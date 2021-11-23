@@ -1,5 +1,6 @@
 package lights.service;
-import com.pi4j.io.gpio.*;
+
+import com.pi4j.context.Context;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,12 +8,18 @@ import org.springframework.stereotype.Service;
 public class GpioControllerService {
 
     @Autowired
-    GpioController gpioController;
+    Context pi4j;
 
-    public void flash(){
-       GpioPinDigitalOutput pin = gpioController.provisionDigitalOutputPin(RaspiPin.GPIO_14, PinState.LOW);
+    public void flash() {
 
-       pin.toggle();
+        // create a digital output instance using the default digital output provider
+        var output = pi4j.dout().create("18");
+
+        if (output.isHigh()) {
+            output.low();
+        } else {
+            output.high();
+        }
     }
 
 }

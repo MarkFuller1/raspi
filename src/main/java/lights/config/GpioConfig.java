@@ -1,7 +1,7 @@
 package lights.config;
 
-import com.pi4j.io.gpio.GpioController;
-import com.pi4j.io.gpio.GpioFactory;
+import com.pi4j.Pi4J;
+import com.pi4j.context.Context;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -9,7 +9,9 @@ import org.springframework.context.annotation.Configuration;
 public class GpioConfig {
 
     @Bean
-    public GpioController getGpioController(){
-        return GpioFactory.getInstance();
+    public Context getGpioController(){
+
+        var pi4j = Pi4J.newAutoContext();
+        return pi4j;
     }
 }
