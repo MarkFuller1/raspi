@@ -7,6 +7,7 @@ import com.pi4j.io.gpio.digital.DigitalOutputConfigBuilder;
 import com.pi4j.io.gpio.digital.DigitalState;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 import javax.annotation.PreDestroy;
 
@@ -16,11 +17,13 @@ public class GpioConfig {
     public static final int PID_NUMBER = 4;
 
     @Bean
+    @Profile("!local")
     public Context getGpioConfig() {
         return Pi4J.newAutoContext();
     }
 
     @Bean
+    @Profile("!local")
     public DigitalOutputConfigBuilder getDigitalOutput() {
         return DigitalOutput.newConfigBuilder(getGpioConfig())
                 .id("led")
@@ -32,13 +35,14 @@ public class GpioConfig {
     }
 
     @Bean
+    @Profile("!local")
     public DigitalOutput getLed() {
         return getGpioConfig().create(getDigitalOutput());
     }
 
     @PreDestroy
-    public void shutdown(){
+    @Profile("!local")
+    public void shutdown() {
         getGpioConfig().shutdown();
     }
-
 }

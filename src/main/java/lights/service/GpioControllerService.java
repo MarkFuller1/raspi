@@ -2,8 +2,10 @@ package lights.service;
 
 import com.pi4j.io.gpio.digital.DigitalOutput;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+@Profile("!local")
 @Service
 public class GpioControllerService {
 
