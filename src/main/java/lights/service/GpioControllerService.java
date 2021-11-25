@@ -15,6 +15,7 @@ public class GpioControllerService {
             led.high();
             Thread.sleep(1000);
             led.low();
+            Thread.sleep(1000);
         }
         return "done";
     }
