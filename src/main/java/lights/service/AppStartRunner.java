@@ -14,6 +14,6 @@ public class AppStartRunner {
 
     @PostConstruct
     public void postConstruct() {
-        gpioControllerService.blink(5, 100);
+        gpioControllerService.blink(5, 1000);
     }
 }
