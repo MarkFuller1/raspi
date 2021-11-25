@@ -8,6 +8,8 @@ import com.pi4j.io.gpio.digital.DigitalState;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.annotation.PreDestroy;
+
 @Configuration
 public class GpioConfig {
 
@@ -33,4 +35,10 @@ public class GpioConfig {
     public DigitalOutput getLed() {
         return getGpioConfig().create(getDigitalOutput());
     }
+
+    @PreDestroy
+    public void shutdown(){
+        getGpioConfig().shutdown();
+    }
+
 }
