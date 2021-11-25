@@ -20,7 +20,7 @@ public class AppStartRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
-        gpioControllerService.blink(5, 1000);
+        gpioControllerService.blink(10, 200);
         System.err.println("Initialization complete");
         new Thread(() -> {
             while (true) {
