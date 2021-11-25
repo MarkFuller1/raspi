@@ -2,7 +2,7 @@
 sudo touch lastPulled
 sudo echo "$(date)" >> lastPulled
 
-cd /opt/prod/raspi
+cd /opt/prod/raspi || exit
 
 echo "pulling"
 sudo /usr/bin/mvn clean
