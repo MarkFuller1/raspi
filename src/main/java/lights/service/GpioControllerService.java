@@ -10,11 +10,13 @@ public class GpioControllerService {
     @Autowired
     DigitalOutput led;
 
-    public void toggle() {
+    public String toggle() {
         if (led.isHigh()) {
             led.low();
+            return "is now off";
         } else {
             led.high();
+            return "is now on";
         }
     }
 }
