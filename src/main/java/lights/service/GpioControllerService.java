@@ -4,17 +4,19 @@ import com.pi4j.io.gpio.digital.DigitalOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.concurrent.TimeUnit;
-
 @Service
 public class GpioControllerService {
 
     @Autowired
     DigitalOutput led;
 
-    public String toggle() {
-        led.blink(1, 1, TimeUnit.SECONDS);
-        return "blinking";
+    public String toggle() throws InterruptedException {
+        for (int i = 0; i < 100; i++) {
+            led.high();
+            Thread.sleep(1000);
+            led.low();
+        }
+        return "done";
     }
 //        if (led.isHigh()) {
 //            led.low();
