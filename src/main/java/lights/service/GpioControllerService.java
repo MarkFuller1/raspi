@@ -10,10 +10,10 @@ public class GpioControllerService {
     @Autowired
     Context pi4j;
 
-    public void flash() {
+    public void toggle() {
 
         // create a digital output instance using the default digital output provider
-        var output = pi4j.dout().create(4, "my-led");
+        var output = pi4j.dout().create(4);
 
         if (output.isHigh()) {
             output.low();

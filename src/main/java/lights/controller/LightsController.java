@@ -14,7 +14,7 @@ public class LightsController {
 
     @RequestMapping("/flash")
     public String flash(){
-        gpioControllerService.flash();
+        gpioControllerService.toggle();
         return "okay";
     }
 
