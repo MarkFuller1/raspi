@@ -14,6 +14,7 @@ public class GpioControllerService {
 
     public String toggle() {
         led.blink(1, 1, TimeUnit.SECONDS);
+        return "blinking";
     }
 //        if (led.isHigh()) {
 //            led.low();
