@@ -5,15 +5,15 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-
 @Component
-public class AppStartRunner {
+public class AppStartRunner implements ApplicationRunner {
     @Autowired
     GpioControllerService gpioControllerService;
 
-    @PostConstruct
-    public void postConstruct() {
+    @Override
+    public void run(ApplicationArguments args) {
         gpioControllerService.blink(5, 1000);
+        System.err.println("Initialization complete");
+
     }
 }
