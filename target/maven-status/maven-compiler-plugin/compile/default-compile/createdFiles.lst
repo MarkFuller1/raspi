@@ -1,4 +1,6 @@
+lights\controller\TimerController.class
 lights\config\GpioConfig.class
 lights\service\GpioControllerService.class
 lights\Main.class
+lights\service\AppStartRunner.class
 lights\controller\LightsController.class

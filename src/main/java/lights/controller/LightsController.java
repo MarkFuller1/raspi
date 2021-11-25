@@ -14,7 +14,7 @@ public class LightsController {
     GpioControllerService gpioControllerService;
 
     @RequestMapping("/toggle")
-    public String flash() throws InterruptedException {
+    public String flash() {
         return gpioControllerService.toggle();
     }
 
