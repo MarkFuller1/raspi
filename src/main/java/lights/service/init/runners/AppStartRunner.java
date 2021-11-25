@@ -24,7 +24,7 @@ public class AppStartRunner implements ApplicationRunner {
         System.err.println("Initialization complete");
         new Thread(() -> {
             while (true) {
-                System.out.println("Checking if timer is done...");
+//                System.out.println("Checking if timer is done...");
                 if (timer.isElapsed()) {
                     System.out.println("Timer complete");
                     gpioControllerService.blink(10, 200);
