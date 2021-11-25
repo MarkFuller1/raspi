@@ -10,6 +10,7 @@ import java.time.LocalTime;
 public class TimerService {
 
     private LocalDateTime startTime = LocalDateTime.now();
+    private boolean active = false;
 
     private int hour = 0;
     private int minute = 0;
@@ -21,14 +22,18 @@ public class TimerService {
     }
 
     public String getTimeLeft() {
-        LocalDateTime endTime = startTime.plusHours(hour).plusMinutes(minute).plusSeconds(seconds).plusNanos(nanos);
+        if (active) {
+            LocalDateTime endTime = startTime.plusHours(hour).plusMinutes(minute).plusSeconds(seconds).plusNanos(nanos);
 
-        Duration diff = Duration.between(LocalDateTime.now(), endTime);
-        return diff.toString();
+            Duration diff = Duration.between(LocalDateTime.now(), endTime);
+            return diff.toString();
+        }
+        return "timer not started";
 
     }
 
     public String setTimer(int hr, int min, int sec, long nan) {
+        active = false;
         hour = hr;
         minute = min;
         seconds = sec;
@@ -39,10 +44,20 @@ public class TimerService {
 
     public String startTimer() {
         startTime = LocalDateTime.now();
+        active = true;
         return LocalTime.now().toString();
     }
 
     public String getTimer() {
         return LocalTime.of(hour, minute, seconds, (int) nanos).toString();
+    }
+
+    public boolean isElapsed() {
+        if (active) {
+            Duration timeLeft = Duration.parse(getTimeLeft());
+            System.out.println("Time left: " + timeLeft.toString());
+            return timeLeft.isNegative();
+        }
+        return false;
     }
 }
