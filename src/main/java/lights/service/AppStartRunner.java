@@ -1,18 +1,19 @@
 package lights.service;
 
-import com.pi4j.io.gpio.digital.DigitalOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 @Component
-public class AppStartRunner implements ApplicationRunner {
+public class AppStartRunner {
     @Autowired
     GpioControllerService gpioControllerService;
 
-    @Override
-    public void run(ApplicationArguments args) {
-       gpioControllerService.blink(5, 100);
+    @PostConstruct
+    public void postConstruct() {
+        gpioControllerService.blink(5, 100);
     }
 }
