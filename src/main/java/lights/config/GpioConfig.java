@@ -11,19 +11,18 @@ import org.springframework.context.annotation.Profile;
 
 import javax.annotation.PreDestroy;
 
+@Profile("!local")
 @Configuration
 public class GpioConfig {
 
     public static final int PID_NUMBER = 4;
 
     @Bean
-    @Profile("!local")
     public Context getGpioConfig() {
         return Pi4J.newAutoContext();
     }
 
     @Bean
-    @Profile("!local")
     public DigitalOutputConfigBuilder getDigitalOutput() {
         return DigitalOutput.newConfigBuilder(getGpioConfig())
                 .id("led")
@@ -35,13 +34,11 @@ public class GpioConfig {
     }
 
     @Bean
-    @Profile("!local")
     public DigitalOutput getLed() {
         return getGpioConfig().create(getDigitalOutput());
     }
 
     @PreDestroy
-    @Profile("!local")
     public void shutdown() {
         getGpioConfig().shutdown();
     }
