@@ -1,6 +1,6 @@
 package lights.service;
 
-import com.pi4j.context.Context;
+import com.pi4j.io.gpio.digital.DigitalOutput;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,17 +8,13 @@ import org.springframework.stereotype.Service;
 public class GpioControllerService {
 
     @Autowired
-    Context pi4j;
+    DigitalOutput led;
 
     public void toggle() {
-
-        // create a digital output instance using the default digital output provider
-        var output = pi4j.dout().create(4);
-
-        if (output.isHigh()) {
-            output.low();
+        if (led.isHigh()) {
+            led.low();
         } else {
-            output.high();
+            led.high();
         }
     }
 }

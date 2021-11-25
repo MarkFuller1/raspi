@@ -2,16 +2,35 @@ package lights.config;
 
 import com.pi4j.Pi4J;
 import com.pi4j.context.Context;
+import com.pi4j.io.gpio.digital.DigitalOutput;
+import com.pi4j.io.gpio.digital.DigitalOutputConfigBuilder;
+import com.pi4j.io.gpio.digital.DigitalState;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class GpioConfig {
 
-    @Bean
-    public Context getGpioController(){
+    public static final int PID_NUMBER = 4;
 
-        var pi4j = Pi4J.newAutoContext();
-        return pi4j;
+    @Bean
+    public Context getGpioConfig() {
+        return Pi4J.newAutoContext();
+    }
+
+    @Bean
+    public DigitalOutputConfigBuilder getDigitalOutput() {
+        return DigitalOutput.newConfigBuilder(getGpioConfig())
+                .id("led")
+                .name("toggle led")
+                .address(PID_NUMBER)
+                .shutdown(DigitalState.LOW)
+                .initial(DigitalState.LOW)
+                .provider("pigpio-digital-output");
+    }
+
+    @Bean
+    public DigitalOutput getLed() {
+        return getGpioConfig().create(getDigitalOutput());
     }
 }

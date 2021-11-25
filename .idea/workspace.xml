@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="12969b80-39d7-41de-8792-3185e71c4eab" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lights/controller/LightsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lights/controller/LightsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lights/service/GpioControllerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lights/service/GpioControllerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lights/config/GpioConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lights/config/GpioConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
