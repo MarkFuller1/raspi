@@ -21,23 +21,11 @@ public class TimerService {
     }
 
     public String getTimeLeft() {
-        LocalDateTime start = LocalDateTime.of(startTime.toLocalDate(), startTime.toLocalTime());
-        LocalDateTime endTime =
-                start.plusHours(hour).plusMinutes(minute).plusSeconds(seconds).plusNanos(nanos);
+        LocalDateTime endTime = startTime.plusHours(hour).plusMinutes(minute).plusSeconds(seconds).plusNanos(nanos);
 
         Duration diff = Duration.between(LocalDateTime.now(), endTime);
         return diff.toString();
 
-//        int diffhour = (int) endTime.getHour() - LocalTime.now().getHour();
-//        int diffminute = (int) endTime.getMinute() - LocalTime.now().getMinute();
-//        int diffsecond = (int) endTime.getSecond() - LocalTime.now().getSecond();
-//        int diffnano = (int) endTime.getNano() - LocalTime.now().getNano();
-//
-//        return LocalTime.of(
-//                (int) endTime.getHour() - LocalTime.now().getHour(),
-//                (int) endTime.getMinute() - LocalTime.now().getMinute(),
-//                (int) endTime.getSecond() - LocalTime.now().getSecond(),
-//                (int) endTime.getNano() - LocalTime.now().getNano()).toString();
     }
 
     public String setTimer(int hr, int min, int sec, long nan) {
