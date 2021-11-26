@@ -11,36 +11,32 @@ import org.springframework.util.concurrent.ListenableFutureCallback;
 
 @Service
 @Slf4j
-public class ProducerService {
-
-    @Service
-    public class KafkaProducerService<T> {
+public class ProducerService<T> {
 
 
-        @Value("${kafkaTopic}")
-        private String topicName;
+    @Value("${kafkaTopic}")
+    private String topicName;
 
-        @Autowired
-        private KafkaTemplate<String, T> kafkaTemplate;
+    @Autowired
+    private KafkaTemplate<String, T> kafkaTemplate;
 
-        public String produce(T payrollInfo) {
-            log.info("Sending message:" + payrollInfo.toString());
-            ListenableFuture<SendResult<String, T>> future = kafkaTemplate.send(topicName, payrollInfo);
-            future.addCallback(
-                    new ListenableFutureCallback<SendResult<String, T>>() {
+    public String produce(T payrollInfo) {
+        log.info("Sending message:" + payrollInfo.toString());
+        ListenableFuture<SendResult<String, T>> future = kafkaTemplate.send(topicName, payrollInfo);
+        future.addCallback(
+                new ListenableFutureCallback<SendResult<String, T>>() {
 
-                        @Override
-                        public void onSuccess(SendResult<String, T> result) {
-                            log.info(
-                                    "Sent message to [{}], with content =[{}] with offset=[{}]", topicName, payrollInfo, result.getRecordMetadata().offset());
-                        }
+                    @Override
+                    public void onSuccess(SendResult<String, T> result) {
+                        log.info(
+                                "Sent message to [{}], with content =[{}] with offset=[{}]", topicName, payrollInfo, result.getRecordMetadata().offset());
+                    }
 
-                        @Override
-                        public void onFailure(Throwable ex) {
-                            log.info("Unable to send message=[{}] due to : {}", payrollInfo, ex.getMessage());
-                        }
-                    });
-            return "Success";
-        }
+                    @Override
+                    public void onFailure(Throwable ex) {
+                        log.info("Unable to send message=[{}] due to : {}", payrollInfo, ex.getMessage());
+                    }
+                });
+        return "Success";
     }
 }
