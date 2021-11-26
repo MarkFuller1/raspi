@@ -14,7 +14,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-@EnableAutoConfiguration
 public class KafkaProducerConfig<T> {
 
     @Value(value = "${kafkaServer}")
