@@ -32,7 +32,7 @@ public class AppStartRunner implements ApplicationRunner {
                 }
                 try {
                     Thread.sleep(1000);
-                }catch (Exception e){
+                } catch (Exception e) {
                     System.err.println("Sleep had to end");
                 }
             }

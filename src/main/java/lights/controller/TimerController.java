@@ -24,17 +24,17 @@ public class TimerController {
     }
 
     @GetMapping("/systemTime")
-    public String systemTime(){
+    public String systemTime() {
         return timer.getSystemTime();
     }
 
     @PostMapping("/start")
-    public String startTimer(){
+    public String startTimer() {
         return timer.startTimer();
     }
 
     @GetMapping("/left")
-    public String elapsed(){
+    public String elapsed() {
         return timer.getTimeLeft();
     }
 }
