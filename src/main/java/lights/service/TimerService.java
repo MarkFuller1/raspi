@@ -36,7 +36,6 @@ public class TimerService {
             return diff.toString();
         }
         return "timer not started";
-
     }
 
     public String setTimer(int hr, int min, int sec, long nan) {

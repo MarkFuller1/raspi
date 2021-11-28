@@ -50,12 +50,6 @@ public class AppStartRunner implements ApplicationRunner {
     }
 
     public void produceTimerMessage() {
-        try {
-            producerService.produce("Timer expired:" + Constants.MAC_ADDRESS);
-        } catch (Exception e) {
-            log.error("Failed to produce the message");
-            log.error(Arrays.toString(e.getStackTrace()));
-        }
     }
 
     public void initNode() {
@@ -72,7 +66,7 @@ public class AppStartRunner implements ApplicationRunner {
                 log.info("Timer complete");
                 gpioControllerService.blink(10, 200);
                 timer.setTimer(0, 0, 0, 0);
-                produceTimerMessage();
+                producerService.produce("Timer expired");
             }
         }, 0, 1, TimeUnit.SECONDS);
 
