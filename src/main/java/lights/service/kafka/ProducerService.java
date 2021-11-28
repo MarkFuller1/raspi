@@ -1,5 +1,6 @@
 package lights.service.kafka;
 
+import lights.util.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -11,30 +12,30 @@ import org.springframework.util.concurrent.ListenableFutureCallback;
 
 @Service
 @Slf4j
-public class ProducerService<T> {
+public class ProducerService {
 
 
     @Value("${kafkaTopic}")
     private String topicName;
 
     @Autowired
-    private KafkaTemplate<String, T> kafkaTemplate;
+    private KafkaTemplate<String, String> kafkaTemplate;
 
-    public String produce(T payrollInfo) {
-        log.info("Sending message:" + payrollInfo.toString());
-        ListenableFuture<SendResult<String, T>> future = kafkaTemplate.send(topicName, payrollInfo);
+    public String produce(String message) {
+        log.info("Sending message:" + message.toString());
+        ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topicName, Constants.MAC_ADDRESS + ":" + message);
         future.addCallback(
-                new ListenableFutureCallback<SendResult<String, T>>() {
+                new ListenableFutureCallback<SendResult<String, String>>() {
 
                     @Override
-                    public void onSuccess(SendResult<String, T> result) {
+                    public void onSuccess(SendResult<String, String> result) {
                         log.info(
-                                "Sent message to [{}], with content =[{}] with offset=[{}]", topicName, payrollInfo, result.getRecordMetadata().offset());
+                                "Sent message to [{}], with content =[{}] with offset=[{}]", topicName, message, result.getRecordMetadata().offset());
                     }
 
                     @Override
                     public void onFailure(Throwable ex) {
-                        log.info("Unable to send message=[{}] due to : {}", payrollInfo, ex.getMessage());
+                        log.info("Unable to send message=[{}] due to : {}", message, ex.getMessage());
                     }
                 });
         return "Success";
