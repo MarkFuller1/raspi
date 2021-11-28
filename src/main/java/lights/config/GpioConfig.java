@@ -14,7 +14,7 @@ import javax.annotation.PreDestroy;
 public class GpioConfig {
 
     public static final int LED_PID_NUMBER = 4;
-    public static final int BUTTON_PID_NUMBER = 17;
+    public static final int BUTTON_PID_NUMBER = 27;
 
     @Bean
     public Context getGpioConfig() {
