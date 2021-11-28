@@ -14,7 +14,7 @@ public class Constants {
         try {
             MAC_ADDRESS = Arrays.toString(NetworkInterface.getByInetAddress(InetAddress.getLocalHost()).getHardwareAddress());
         } catch (Exception e) {
-            log.error("Failed to fetch mac address: " + Arrays.toString(e.getStackTrace()));
+            log.error("Failed to fetch mac address: " + e.getMessage());
         }
     }
 }
