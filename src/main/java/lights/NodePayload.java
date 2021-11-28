@@ -2,7 +2,9 @@ package lights;
 
 import lights.util.Utils;
 import lombok.*;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Getter
 @Setter
 @Builder
@@ -16,6 +18,7 @@ public class NodePayload {
 
     @Override
     public String toString() {
+        log.info(IP_ADDRESS + timerDurationLeft + state + message);
         return Utils.toJson(this);
     }
 }
