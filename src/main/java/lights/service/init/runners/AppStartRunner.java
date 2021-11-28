@@ -3,6 +3,7 @@ package lights.service.init.runners;
 import lights.service.GpioControllerService;
 import lights.service.TimerService;
 import lights.service.kafka.ProducerService;
+import lights.util.Constants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -10,8 +11,6 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-import java.net.InetAddress;
-import java.net.NetworkInterface;
 import java.util.Arrays;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -32,32 +31,55 @@ public class AppStartRunner implements ApplicationRunner {
     @Autowired
     ProducerService<String> producerService;
 
-    private final ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+    private final ScheduledExecutorService timerExecutor = Executors.newSingleThreadScheduledExecutor();
+    private final ScheduledExecutorService timerListenerExecutor = Executors.newSingleThreadScheduledExecutor();
     private volatile ScheduledFuture<?> task;
 
     @Override
     public void run(ApplicationArguments args) {
-        gpioControllerService.blink(10, 200);
-        System.err.println("Initialization complete");
 
-        new Thread(() -> {
-            task = executor.scheduleWithFixedDelay(() -> {
-                if (timer.isElapsed()) {
-                    System.out.println("Timer complete");
-                    gpioControllerService.blink(10, 200);
-                    timer.setTimer(0, 0, 0, 0);
-                    produceTimerMessage();
-                }
-            }, 0, 1, TimeUnit.SECONDS);
-        }).start();
+        //physical representation of startup success
+        gpioControllerService.blink(10, 200);
+        log.info("Initialization complete");
+
+        // tell kafka broker node has started
+        initNode();
+
+        // start timer thread;
+        startTimerThread();
     }
 
     public void produceTimerMessage() {
         try {
-            producerService.produce("Timer expired:" + Arrays.toString(NetworkInterface.getByInetAddress(InetAddress.getLocalHost()).getHardwareAddress()));
+            producerService.produce("Timer expired:" + Constants.MAC_ADDRESS);
         } catch (Exception e) {
             log.error("Failed to produce the message");
             log.error(Arrays.toString(e.getStackTrace()));
         }
+    }
+
+    public void initNode() {
+        try {
+            producerService.produce("Node startup:" + Constants.MAC_ADDRESS);
+        } catch (Exception e) {
+            log.error("failed to send node startup message");
+        }
+    }
+
+    public void startTimerThread() {
+        task = timerExecutor.scheduleWithFixedDelay(() -> {
+            if (timer.isElapsed()) {
+                log.info("Timer complete");
+                gpioControllerService.blink(10, 200);
+                timer.setTimer(0, 0, 0, 0);
+                produceTimerMessage();
+            }
+        }, 0, 1, TimeUnit.SECONDS);
+
+        timerListenerExecutor.scheduleWithFixedDelay(() -> {
+            if (task.isCancelled() || task.isDone()) {
+                log.error("The timer thread has ended");
+            }
+        }, 0, 1, TimeUnit.SECONDS);
     }
 }

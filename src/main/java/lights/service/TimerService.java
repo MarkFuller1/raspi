@@ -1,11 +1,13 @@
 package lights.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+@Slf4j
 @Service
 public class TimerService {
 
@@ -55,7 +57,7 @@ public class TimerService {
     public boolean isElapsed() {
         if (active) {
             Duration timeLeft = Duration.parse(getTimeLeft());
-            System.out.println("Time left: " + timeLeft.toString());
+            log.info("Time left: " + timeLeft.toString());
             return timeLeft.isNegative();
         }
         return false;
