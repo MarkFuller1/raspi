@@ -8,11 +8,11 @@
         <version>2.6.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>demo</artifactId>
+    <groupId>com.raspi.process</groupId>
+    <artifactId>node</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
-    <description>Demo project for Spring Boot</description>
+    <name>node</name>
+    <description>Manufacturing processing node</description>
     <properties>
         <java.version>11</java.version>
         <maven.compiler.target>11</maven.compiler.target>
