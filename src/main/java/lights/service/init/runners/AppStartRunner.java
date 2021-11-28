@@ -29,7 +29,7 @@ public class AppStartRunner implements ApplicationRunner {
     TimerService timer;
 
     @Autowired
-    ProducerService<String> producerService;
+    ProducerService producerService;
 
     private final ScheduledExecutorService timerExecutor = Executors.newSingleThreadScheduledExecutor();
     private final ScheduledExecutorService timerListenerExecutor = Executors.newSingleThreadScheduledExecutor();

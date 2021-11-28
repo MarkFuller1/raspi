@@ -1,6 +1,8 @@
 package lights.service;
 
+import lights.service.kafka.ProducerService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
@@ -10,6 +12,9 @@ import java.time.LocalTime;
 @Slf4j
 @Service
 public class TimerService {
+
+    @Autowired
+    ProducerService producerService;
 
     private LocalDateTime startTime = LocalDateTime.now();
     private boolean active = false;
@@ -41,12 +46,15 @@ public class TimerService {
         seconds = sec;
         nanos = nan;
 
+        producerService.produce("Timer set:" + LocalTime.of(hr, min, sec, (int) nan).toString());
         return LocalTime.of(hr, min, sec, (int) nan).toString();
     }
 
     public String startTimer() {
         startTime = LocalDateTime.now();
         active = true;
+
+        producerService.produce(LocalTime.now().toString());
         return LocalTime.now().toString();
     }
 
