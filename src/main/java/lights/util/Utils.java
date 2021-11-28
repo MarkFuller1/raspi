@@ -11,6 +11,7 @@ public class Utils {
         try {
             return mapper.writeValueAsString(o);
         } catch (Exception e) {
+            e.printStackTrace();
             log.error("Failed to convert message to json:" + e.getMessage());
             return "{ \"IP_ADDRESS\" : " + Constants.IP_ADDRESS + ", timerDurationLeft: \"\", state: \"\",error: Failed to build payload}";
         }
