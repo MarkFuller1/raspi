@@ -12,4 +12,4 @@ echo "compile package"
 sudo /usr/bin/mvn clean compile package 
 echo "done compile package"
 echo "start server"
-sudo /usr/bin/java -jar -Dspring.profiles.active=prod target/demo-0.0.1-SNAPSHOT.jar
+sudo /usr/bin/java -jar -Dspring.profiles.active=prod target/node-0.0.1-SNAPSHOT.jar
