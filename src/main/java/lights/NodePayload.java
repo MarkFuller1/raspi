@@ -12,10 +12,10 @@ import org.springframework.util.StringUtils;
 @AllArgsConstructor
 @NoArgsConstructor
 public class NodePayload {
-    String IP_ADDRESS;
-    String timerDurationLeft;
-    String state;
-    String message;
+    public String IP_ADDRESS;
+    public String timerDurationLeft;
+    public String state;
+    public String message;
 
     @Override
     public String toString() {
@@ -28,6 +28,8 @@ public class NodePayload {
         if (!StringUtils.hasText(message)) {
             message = "";
         }
+
+        log.info(IP_ADDRESS + timerDurationLeft + state + message);
 
         return Utils.toJson(this);
     }
