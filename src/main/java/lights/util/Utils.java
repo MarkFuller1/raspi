@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class Utils {
-    public static ObjectMapper mapper;
+    public static ObjectMapper mapper = new ObjectMapper();
 
     public static String toJson(Object o) {
         try {
