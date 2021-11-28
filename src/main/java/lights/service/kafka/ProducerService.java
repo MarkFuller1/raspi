@@ -1,6 +1,6 @@
 package lights.service.kafka;
 
-import lights.util.Constants;
+import lights.NodePayload;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -21,9 +21,9 @@ public class ProducerService {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    public String produce(String message) {
+    public String produce(NodePayload message) {
         log.info("Sending message:" + message.toString());
-        ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topicName, Constants.MAC_ADDRESS + ":" + message);
+        ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topicName, message.toString());
         future.addCallback(
                 new ListenableFutureCallback<SendResult<String, String>>() {
 

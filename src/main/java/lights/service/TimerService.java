@@ -1,6 +1,9 @@
 package lights.service;
 
+import lights.NodePayload;
 import lights.service.kafka.ProducerService;
+import lights.util.Constants;
+import lights.util.NodeState;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,7 +48,7 @@ public class TimerService {
         seconds = sec;
         nanos = nan;
 
-        producerService.produce("Timer set:" + LocalTime.of(hr, min, sec, (int) nan).toString());
+        producerService.produce(new NodePayload(Constants.IP_ADDRESS, getTimeLeft(), NodeState.SET.name(), LocalTime.of(hr, min, sec, (int) nan).toString()));
         return LocalTime.of(hr, min, sec, (int) nan).toString();
     }
 
@@ -53,7 +56,8 @@ public class TimerService {
         startTime = LocalDateTime.now();
         active = true;
 
-        producerService.produce(LocalTime.now().toString());
+        producerService.produce(new NodePayload(Constants.IP_ADDRESS, getTimeLeft(), NodeState.NEXT.name(), LocalTime.now().toString()));
+
         return LocalTime.now().toString();
     }
 
@@ -68,5 +72,25 @@ public class TimerService {
             return timeLeft.isNegative();
         }
         return false;
+    }
+
+    public void stopTimer() {
+        Duration left = Duration.parse(getTimeLeft());
+        NodePayload payload = new NodePayload(Constants.IP_ADDRESS, left.toString(), NodeState.FINISHED.name(), NodeState.FINISHED.getMeaning());
+
+        if (active && !(left.isNegative())) {
+            // payload already matching
+            active = false;
+        } else if (active && left.isNegative()) {
+            payload.setState(NodeState.LATE.name());
+            payload.setMessage(NodeState.LATE.getMeaning());
+        } else if (!active) {
+            // start timer if the button is pressed again
+            startTimer();
+            // start timer sends it own message, return so we dont send our own;
+            return;
+        }
+
+        producerService.produce(payload);
     }
 }

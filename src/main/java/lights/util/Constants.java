@@ -2,29 +2,22 @@ package lights.util;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.net.NetworkInterface;
-import java.util.Enumeration;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 
 @Slf4j
 public class Constants {
-    public static String MAC_ADDRESS = "MAC ADDRESS ERROR";
+    public static String IP_ADDRESS = "IP ADDRESS ERROR";
 
     static {
-        try {
-            for (Enumeration enm = NetworkInterface.getNetworkInterfaces(); enm.hasMoreElements(); ) {
-                NetworkInterface network = (NetworkInterface) enm.nextElement();
-                if (null != network.getHardwareAddress()) {
-                    StringBuilder sb = new StringBuilder(18);
-                    for (byte b : network.getHardwareAddress()) {
-                        if (sb.length() > 0)
-                            sb.append(':');
-                        sb.append(String.format("%02x", b));
-                    }
-                    MAC_ADDRESS = sb.toString();
-                }
-            }
-        } catch (Exception e) {
+        try (final DatagramSocket socket = new DatagramSocket()) {
+            socket.connect(InetAddress.getByName("8.8.8.8"), 10002);
+            IP_ADDRESS = socket.getLocalAddress().getHostAddress();
+        } catch (SocketException | UnknownHostException e) {
             log.error("Failed to fetch mac address: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }

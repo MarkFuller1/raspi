@@ -1,9 +1,13 @@
 package lights.service.init.runners;
 
+import com.pi4j.io.gpio.digital.DigitalInput;
+import com.pi4j.io.gpio.digital.DigitalState;
+import lights.NodePayload;
 import lights.service.GpioControllerService;
 import lights.service.TimerService;
 import lights.service.kafka.ProducerService;
 import lights.util.Constants;
+import lights.util.NodeState;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -11,7 +15,6 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -24,6 +27,9 @@ public class AppStartRunner implements ApplicationRunner {
 
     @Autowired
     GpioControllerService gpioControllerService;
+
+    @Autowired
+    DigitalInput button;
 
     @Autowired
     TimerService timer;
@@ -54,7 +60,7 @@ public class AppStartRunner implements ApplicationRunner {
 
     public void initNode() {
         try {
-            producerService.produce("Node startup:" + Constants.MAC_ADDRESS);
+            producerService.produce(new NodePayload(Constants.IP_ADDRESS, "", NodeState.BOOTED.name(), NodeState.BOOTED.getMeaning()));
         } catch (Exception e) {
             log.error("failed to send node startup message");
         }
@@ -65,8 +71,7 @@ public class AppStartRunner implements ApplicationRunner {
             if (timer.isElapsed()) {
                 log.info("Timer complete");
                 gpioControllerService.blink(10, 200);
-                timer.setTimer(0, 0, 0, 0);
-                producerService.produce("Timer expired");
+                producerService.produce(new NodePayload(Constants.IP_ADDRESS, timer.getTimeLeft(), NodeState.EXPIRED.name(), NodeState.EXPIRED.getMeaning()));
             }
         }, 0, 1, TimeUnit.SECONDS);
 
@@ -75,5 +80,14 @@ public class AppStartRunner implements ApplicationRunner {
                 log.error("The timer thread has ended");
             }
         }, 0, 1, TimeUnit.SECONDS);
+    }
+
+    public void startButtonListener() {
+        button.addListener(e -> {
+            if (e.state() == DigitalState.LOW) {
+                log.info("The button was pressed");
+                timer.stopTimer();
+            }
+        });
     }
 }
