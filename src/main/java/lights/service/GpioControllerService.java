@@ -1,12 +1,14 @@
 package lights.service;
 
 import com.pi4j.io.gpio.digital.DigitalOutput;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 @Profile("!local")
 @Service
+@Slf4j
 public class GpioControllerService {
 
     @Autowired
@@ -33,7 +35,7 @@ public class GpioControllerService {
                     Thread.sleep(duration);
                 }
             } catch (InterruptedException e) {
-                System.out.println("Stopped sleep");
+                log.info("Stopped sleep");
             }
         }).start();
         return "blinking";
