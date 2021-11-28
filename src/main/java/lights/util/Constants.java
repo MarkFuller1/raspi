@@ -16,7 +16,7 @@ public class Constants {
             for (Enumeration enm = NetworkInterface.getNetworkInterfaces(); enm.hasMoreElements(); ) {
                 NetworkInterface network = (NetworkInterface) enm.nextElement();
                 if (null != network.getHardwareAddress()) {
-                    MAC_ADDRESS = Arrays.toString(network.getHardwareAddress());
+                    MAC_ADDRESS = new String(network.getHardwareAddress());
                 }
             }
         } catch (Exception e) {
