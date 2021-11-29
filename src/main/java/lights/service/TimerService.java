@@ -49,8 +49,7 @@ public class TimerService {
         try {
             state = NodeState.changeState(state, NodeState.SET);
         } catch (StateException e) {
-            state = NodeState.ERROR;
-            log.error("Tried to change to an unexpected state");
+            log.error(e.getMessage());
             return "";
         }
         hours = hr;
@@ -66,7 +65,7 @@ public class TimerService {
         try {
             state = NodeState.changeState(state, NodeState.STARTED);
         } catch (StateException e) {
-            log.error("Tried to change to an unexpected state");
+            log.error(e.getMessage());
             return "";
         }
 
@@ -100,7 +99,7 @@ public class TimerService {
             NodeState.changeState(state, NodeState.LATE);
             NodeState.changeState(state, NodeState.DONE);
         } catch (StateException e) {
-            log.error("Tried to change to an unexpected state");
+            log.error(e.getMessage());
             return;
         }
 
@@ -124,7 +123,7 @@ public class TimerService {
         try {
             state = NodeState.changeState(state, NodeState.BOOTED);
         } catch (StateException e) {
-            log.info("Failed to change state");
+            log.info(e.getMessage());
         }
     }
 
@@ -132,7 +131,7 @@ public class TimerService {
         try {
             state = NodeState.changeState(state, NodeState.EXPIRED);
         } catch (StateException e) {
-            log.info("Failed to change state");
+            log.info(e.getMessage());
         }
     }
 }
