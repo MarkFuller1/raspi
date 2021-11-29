@@ -18,6 +18,13 @@ public class NodePayload {
     public String message;
     public String timeStamp;
 
+    public NodePayload(String ip, String timer, String state, String message) {
+        this.IP_ADDRESS = ip;
+        this.timerDurationLeft = timer;
+        this.state = state;
+        this.message = message;
+    }
+
     @Override
     public String toString() {
         if (!StringUtils.hasText(timerDurationLeft)) {

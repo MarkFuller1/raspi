@@ -11,6 +11,7 @@ import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Service
 @Slf4j
@@ -24,7 +25,9 @@ public class ProducerService {
     private KafkaTemplate<String, String> kafkaTemplate;
 
     public String produce(NodePayload message) {
-        message.setTimeStamp(LocalDateTime.now().toString());
+
+        String formatDateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
+        message.setTimeStamp(formatDateTime);
 
         log.info("Sending message:" + message.toString());
         ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topicName, message.toString());
