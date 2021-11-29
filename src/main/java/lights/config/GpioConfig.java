@@ -19,7 +19,6 @@ public class GpioConfig {
     public static final int BUTTON_AUX_PID_NUMBER = 6;
 
 
-    @Bean
     public Context getGpioConfig() {
         return Pi4J.newAutoContext();
     }
