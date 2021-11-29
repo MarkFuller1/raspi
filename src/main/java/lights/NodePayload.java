@@ -16,6 +16,7 @@ public class NodePayload {
     public String timerDurationLeft;
     public String state;
     public String message;
+    public String timeStamp;
 
     @Override
     public String toString() {

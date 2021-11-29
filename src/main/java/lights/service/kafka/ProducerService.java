@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 
+import java.time.LocalDateTime;
+
 @Service
 @Slf4j
 public class ProducerService {
@@ -22,6 +24,8 @@ public class ProducerService {
     private KafkaTemplate<String, String> kafkaTemplate;
 
     public String produce(NodePayload message) {
+        message.setTimeStamp(LocalDateTime.now().toString());
+
         log.info("Sending message:" + message.toString());
         ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topicName, message.toString());
         future.addCallback(
