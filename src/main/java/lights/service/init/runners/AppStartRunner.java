@@ -84,8 +84,9 @@ public class AppStartRunner implements ApplicationRunner {
 
     public void startButtonListener() {
         button.addListener(e -> {
+            log.info("Listener hit");
             if (e.state() == DigitalState.LOW) {
-                log.info("The button was pressed");
+                log.info("Button triggered");
                 timer.stopTimer();
             }
         });
