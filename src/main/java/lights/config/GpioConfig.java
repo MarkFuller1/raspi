@@ -16,7 +16,7 @@ public class GpioConfig {
     public static final int LED_PID_NUMBER = 4;
     public static final int BUTTON_START_PID_NUMBER = 27;
     public static final int BUTTON_STOP_PID_NUMBER = 22;
-    public static final int BUTTON_AUX_PID_NUMBER = 6;
+    public static final int BUTTON_AUX_PID_NUMBER = 5;
 
 
     public Context getGpioConfig() {
@@ -55,7 +55,7 @@ public class GpioConfig {
         return DigitalInput.newConfigBuilder(getGpioConfig())
                 .id("button")
                 .name("Press button")
-                .address(BUTTON_START_PID_NUMBER)
+                .address(BUTTON_STOP_PID_NUMBER)
                 .pull(PullResistance.PULL_DOWN)
                 .debounce(1000L)
                 .provider("pigpio-digital-input");
