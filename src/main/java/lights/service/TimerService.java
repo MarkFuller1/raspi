@@ -75,20 +75,23 @@ public class TimerService {
     }
 
     public void stopTimer() {
+        if (!active) {
+            log.info("Starting timer");
+            startTimer();
+            return;
+        }
+
         Duration left = Duration.parse(getTimeLeft());
         NodePayload payload = new NodePayload(Constants.IP_ADDRESS, left.toString(), NodeState.FINISHED.name(), NodeState.FINISHED.getMeaning());
 
         if (active && !(left.isNegative())) {
             // payload already matching
+            log.info("Stopping timer before expiration");
             active = false;
         } else if (active && left.isNegative()) {
+            log.info("Stopping timer after expiration");
             payload.setState(NodeState.LATE.name());
             payload.setMessage(NodeState.LATE.getMeaning());
-        } else if (!active) {
-            // start timer if the button is pressed again
-            startTimer();
-            // start timer sends it own message, return so we dont send our own;
-            return;
         }
 
         producerService.produce(payload);
