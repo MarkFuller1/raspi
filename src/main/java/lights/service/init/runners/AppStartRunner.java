@@ -53,6 +53,9 @@ public class AppStartRunner implements ApplicationRunner {
 
         // start timer thread;
         startTimerThread();
+
+        // listen to the button
+        startButtonListener();
     }
 
     public void produceTimerMessage() {
