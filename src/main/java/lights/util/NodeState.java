@@ -2,18 +2,29 @@ package lights.util;
 
 import lombok.Getter;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Getter
 public enum NodeState {
+    ERROR("There was an error, or the state has not been initialized, view message for info"),
     BOOTED("The node has started successfully"),
     IDLE("There is no timer set and no timer running"),
-    TICKING("There is a timer counting down"),
-    FINISHED("The timer has been stopped, the process is complete"),
-    EXPIRED("The timer finished before the process was complete"),
-    LATE("The process is finished, but after the timer expired"),
-    NEXT("The timer has begun"),
     SET("The timer was set"),
-    ERROR("There was an error, view message for info");
+    STARTED("The timer has started"),
+    DONE("The button was pressed, the operation is complete before the timer expired"),
+    EXPIRED("The timer finished before the process was complete");
 
+    private static final Map<NodeState, List<NodeState>> STATE_DIAGRAM = new HashMap<>() {{
+        put(ERROR, List.of(ERROR, BOOTED, IDLE, SET));
+        put(BOOTED, List.of(BOOTED, ERROR, IDLE));
+        put(IDLE, List.of(IDLE, ERROR, SET));
+        put(SET, List.of(SET, ERROR, STARTED));
+        put(STARTED, List.of(STARTED, ERROR, DONE, EXPIRED));
+        put(EXPIRED, List.of(EXPIRED, ERROR, SET, STARTED));
+        put(DONE, List.of(DONE, ERROR, SET, STARTED));
+    }};
 
     private String meaning;
 
@@ -21,4 +32,10 @@ public enum NodeState {
         this.meaning = meaning;
     }
 
+    public static NodeState changeState(NodeState state, NodeState set) throws StateException {
+        if (STATE_DIAGRAM.get(state).contains(set)) {
+            return set;
+        }
+        throw new StateException("Cannot change from state:" + state + ", to state " + set);
+    }
 }

@@ -10,6 +10,7 @@ import lights.util.Constants;
 import lights.util.NodeState;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Profile;
@@ -28,8 +29,13 @@ public class AppStartRunner implements ApplicationRunner {
     @Autowired
     GpioControllerService gpioControllerService;
 
+    @Qualifier(value = "STARTBUTTON")
     @Autowired
-    DigitalInput button;
+    DigitalInput startButton;
+
+    @Qualifier(value = "STOPBUTTON")
+    @Autowired
+    DigitalInput stopButton;
 
     @Autowired
     TimerService timer;
@@ -58,9 +64,6 @@ public class AppStartRunner implements ApplicationRunner {
         startButtonListener();
     }
 
-    public void produceTimerMessage() {
-    }
-
     public void initNode() {
         try {
             producerService.produce(new NodePayload(Constants.IP_ADDRESS, "", NodeState.BOOTED.name(), NodeState.BOOTED.getMeaning()));
@@ -86,10 +89,18 @@ public class AppStartRunner implements ApplicationRunner {
     }
 
     public void startButtonListener() {
-        button.addListener(e -> {
-            log.info("Listener hit");
+        startButton.addListener(e -> {
+            log.info("start Listener hit");
             if (e.state() == DigitalState.LOW) {
-                log.info("Button triggered");
+                log.info("start Button triggered");
+                timer.startTimer();
+            }
+        });
+
+        stopButton.addListener(e -> {
+            log.info("stop Listener hit");
+            if(e.state() == DigitalState.LOW) {
+                log.info("stop button triggered");
                 timer.stopTimer();
             }
         });

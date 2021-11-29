@@ -14,7 +14,10 @@ import javax.annotation.PreDestroy;
 public class GpioConfig {
 
     public static final int LED_PID_NUMBER = 4;
-    public static final int BUTTON_PID_NUMBER = 27;
+    public static final int BUTTON_START_PID_NUMBER = 27;
+    public static final int BUTTON_STOP_PID_NUMBER = 22;
+    public static final int BUTTON_AUX_PID_NUMBER = 6;
+
 
     @Bean
     public Context getGpioConfig() {
@@ -37,20 +40,36 @@ public class GpioConfig {
         return getGpioConfig().create(getDigitalOutput());
     }
 
-    @Bean
-    public DigitalInputConfigBuilder getDigitalInput() {
+    @Bean(name = "STARTBUTTONDI")
+    public DigitalInputConfigBuilder getStartButtonDigitalInput() {
         return DigitalInput.newConfigBuilder(getGpioConfig())
                 .id("button")
                 .name("Press button")
-                .address(BUTTON_PID_NUMBER)
+                .address(BUTTON_START_PID_NUMBER)
                 .pull(PullResistance.PULL_DOWN)
                 .debounce(1000L)
                 .provider("pigpio-digital-input");
     }
 
-    @Bean
-    public DigitalInput getButton() {
-        return getGpioConfig().create(getDigitalInput());
+    @Bean(name = "STOPBUTTONDI")
+    public DigitalInputConfigBuilder getStopButtonDigitalInput() {
+        return DigitalInput.newConfigBuilder(getGpioConfig())
+                .id("button")
+                .name("Press button")
+                .address(BUTTON_START_PID_NUMBER)
+                .pull(PullResistance.PULL_DOWN)
+                .debounce(1000L)
+                .provider("pigpio-digital-input");
+    }
+
+    @Bean(name = "STARTBUTTON")
+    public DigitalInput getStartButton() {
+        return getGpioConfig().create(getStartButtonDigitalInput());
+    }
+
+    @Bean(name = "STOPBUTTON")
+    public DigitalInput getStopButton() {
+        return getGpioConfig().create(getStopButtonDigitalInput());
     }
 
     @PreDestroy

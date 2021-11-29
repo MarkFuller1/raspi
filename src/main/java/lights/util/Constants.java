@@ -9,7 +9,7 @@ import java.net.UnknownHostException;
 
 @Slf4j
 public class Constants {
-    public static String IP_ADDRESS = "IP ADDRESS ERROR";
+    public static String IP_ADDRESS = "";
 
     static {
         try (final DatagramSocket socket = new DatagramSocket()) {
