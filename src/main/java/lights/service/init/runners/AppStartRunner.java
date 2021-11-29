@@ -62,6 +62,8 @@ public class AppStartRunner implements ApplicationRunner {
 
         // listen to the button
         startButtonListener();
+
+        timer.idle();
     }
 
     public void initNode() {
