@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
@@ -25,6 +26,8 @@ import java.util.concurrent.TimeUnit;
 @Profile("!local")
 @Component
 public class AppStartRunner implements ApplicationRunner {
+    @Autowired
+    ApplicationContext applicationContext;
 
     @Autowired
     GpioControllerService gpioControllerService;
@@ -63,6 +66,7 @@ public class AppStartRunner implements ApplicationRunner {
         // listen to the button
         startButtonListener();
 
+        // set timer to idle
         timer.idle();
     }
 
@@ -104,7 +108,7 @@ public class AppStartRunner implements ApplicationRunner {
 
         stopButton.addListener(e -> {
             log.info("stop Listener hit");
-            if(e.state() == DigitalState.LOW) {
+            if (e.state() == DigitalState.LOW) {
                 log.info("stop button triggered");
                 timer.stopTimer();
             }

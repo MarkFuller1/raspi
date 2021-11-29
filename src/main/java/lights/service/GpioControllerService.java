@@ -1,10 +1,13 @@
 package lights.service;
 
 import com.pi4j.io.gpio.digital.DigitalOutput;
+import lights.config.GpioConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.PreDestroy;
 
 @Profile("!local")
 @Service
@@ -41,5 +44,8 @@ public class GpioControllerService {
         return "blinking";
     }
 
-
+    @PreDestroy
+    public static void shutdown() {
+        GpioConfig.shutdown();
+    }
 }
