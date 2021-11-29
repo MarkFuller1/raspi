@@ -5,6 +5,7 @@ import lights.service.kafka.ProducerService;
 import lights.util.Constants;
 import lights.util.NodeState;
 import lights.util.StateException;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import java.time.LocalTime;
 
 @Slf4j
 @Service
+@Getter
 public class TimerService {
 
     @Autowired
@@ -47,7 +49,7 @@ public class TimerService {
         try {
             state = NodeState.changeState(state, NodeState.SET);
         } catch (StateException e) {
-            state=NodeState.ERROR;
+            state = NodeState.ERROR;
             log.error("Tried to change to an unexpected state");
             return "";
         }
@@ -95,7 +97,7 @@ public class TimerService {
     public void stopTimer() {
         try {
             // if the state cant be changed to either of these we are in the wrong state
-            NodeState.changeState(state, NodeState.EXPIRED);
+            NodeState.changeState(state, NodeState.LATE);
             NodeState.changeState(state, NodeState.DONE);
         } catch (StateException e) {
             log.error("Tried to change to an unexpected state");
@@ -116,5 +118,21 @@ public class TimerService {
         NodePayload payload = new NodePayload(Constants.IP_ADDRESS, left.toString(), state.name(), state.getMeaning());
 
         producerService.produce(payload);
+    }
+
+    public void init() {
+        try {
+            state = NodeState.changeState(state, NodeState.BOOTED);
+        } catch (StateException e) {
+            log.info("Failed to change state");
+        }
+    }
+
+    public void expired() {
+        try {
+            state = NodeState.changeState(state, NodeState.EXPIRED);
+        } catch (StateException e) {
+            log.info("Failed to change state");
+        }
     }
 }

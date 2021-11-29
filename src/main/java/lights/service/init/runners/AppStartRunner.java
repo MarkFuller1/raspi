@@ -66,6 +66,7 @@ public class AppStartRunner implements ApplicationRunner {
 
     public void initNode() {
         try {
+            timer.init();
             producerService.produce(new NodePayload(Constants.IP_ADDRESS, "", NodeState.BOOTED.name(), NodeState.BOOTED.getMeaning()));
         } catch (Exception e) {
             log.error("failed to send node startup message");
@@ -77,7 +78,9 @@ public class AppStartRunner implements ApplicationRunner {
             if (timer.isElapsed()) {
                 log.info("Timer complete");
                 gpioControllerService.blink(10, 200);
-                producerService.produce(new NodePayload(Constants.IP_ADDRESS, timer.getTimeLeft(), NodeState.EXPIRED.name(), NodeState.EXPIRED.getMeaning()));
+
+                timer.expired();
+                producerService.produce(new NodePayload(Constants.IP_ADDRESS, timer.getTimeLeft(), timer.getState().name(), NodeState.EXPIRED.getMeaning()));
             }
         }, 0, 1, TimeUnit.SECONDS);
 
