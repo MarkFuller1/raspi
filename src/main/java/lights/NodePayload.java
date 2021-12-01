@@ -5,6 +5,9 @@ import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 @Slf4j
 @Getter
 @Setter
@@ -23,6 +26,9 @@ public class NodePayload {
         this.timerDurationLeft = timer;
         this.state = state;
         this.message = message;
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        this.timeStamp = now.toString();
     }
 
     @Override
