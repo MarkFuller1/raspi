@@ -6,6 +6,7 @@ cd /opt/prod/raspi || exit
 
 echo "pulling"
 sudo /usr/bin/mvn clean
+sudo rm selfie.jpg
 sudo /usr/bin/git pull 
 echo "done pulling"
 echo "compile package"

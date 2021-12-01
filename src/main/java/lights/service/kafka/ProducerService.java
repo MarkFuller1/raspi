@@ -26,9 +26,6 @@ public class ProducerService {
 
     public String produce(NodePayload message) {
 
-        String formatDateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
-        message.setTimeStamp(formatDateTime);
-
         log.info("Sending message:" + message.toString());
         ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topicName, message.toString());
         future.addCallback(
