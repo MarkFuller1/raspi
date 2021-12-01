@@ -59,3 +59,7 @@ target/**/*
 .idea/workspace.xml
 .mvn/wrapper/maven-wrapper.properties
 .mvn/wrapper/MavenWrapperDownloader.java
+
+# images
+*.jpg
+*.png
