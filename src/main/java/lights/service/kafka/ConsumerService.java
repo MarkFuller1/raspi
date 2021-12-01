@@ -12,7 +12,7 @@ import java.util.List;
 public class ConsumerService {
     public List<String> messages = new ArrayList<String>();
 
-    @KafkaListener(topics = "${kafkaTopic}", groupId = "${kafkaGroupId}")
+//    @KafkaListener(topics = "${kafkaTopic}", groupId = "${kafkaGroupId}")
     public void consumer(String message) {
         messages.add(message);
         log.info("Consumed:" + message);
