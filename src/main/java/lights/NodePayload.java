@@ -28,7 +28,7 @@ public class NodePayload {
         this.message = message;
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
-        this.timeStamp = now.toString();
+        this.timeStamp = now.format(dtf);
     }
 
     @Override
