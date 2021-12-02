@@ -23,7 +23,7 @@ public enum NodeState {
         put(IDLE, List.of(IDLE, ERROR, SET));
         put(SET, List.of(SET, ERROR, STARTED));
         put(STARTED, List.of(STARTED, ERROR, DONE, EXPIRED));
-        put(EXPIRED, List.of(EXPIRED, ERROR, SET, STARTED));
+        put(EXPIRED, List.of(EXPIRED, ERROR, SET, STARTED, LATE));
         put(DONE, List.of(DONE, ERROR, SET, STARTED));
         put(LATE, List.of(LATE, ERROR, SET, STARTED));
     }};
