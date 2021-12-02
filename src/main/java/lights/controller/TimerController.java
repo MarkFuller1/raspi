@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/timer")
+@CrossOrigin(origins = "*")
 public class TimerController {
 
     @Autowired
