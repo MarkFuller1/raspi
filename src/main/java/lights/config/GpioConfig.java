@@ -16,10 +16,9 @@ import java.util.List;
 @Configuration
 public class GpioConfig {
 
-    public static final int LED_PID_NUMBER = 4;
-    public static final int BUTTON_START_PID_NUMBER = 27;
-    public static final int BUTTON_STOP_PID_NUMBER = 22;
-    public static final int BUTTON_AUX_PID_NUMBER = 5;
+    public static final int LED_PID_NUMBER = 18;
+    public static final int BUTTON_START_PID_NUMBER = 23;
+    public static final int BUTTON_STOP_PID_NUMBER = 24;
 
     private static List<Context> contexts = new ArrayList<Context>();
 
