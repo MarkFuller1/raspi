@@ -52,7 +52,7 @@ public class GpioConfig {
                 .name("Press button")
                 .address(BUTTON_START_PID_NUMBER)
                 .pull(PullResistance.PULL_DOWN)
-                .debounce(1000L)
+                .debounce(3000L)
                 .provider("pigpio-digital-input");
     }
 
@@ -63,7 +63,7 @@ public class GpioConfig {
                 .name("Press button")
                 .address(BUTTON_STOP_PID_NUMBER)
                 .pull(PullResistance.PULL_DOWN)
-                .debounce(1000L)
+                .debounce(3000L)
                 .provider("pigpio-digital-input");
     }
 
