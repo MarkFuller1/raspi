@@ -101,7 +101,6 @@ public class TimerService {
         } catch (StateException e) {
             failed = true;
             log.error(e.getMessage());
-            return;
         }
         if (!failed) {
             try {
