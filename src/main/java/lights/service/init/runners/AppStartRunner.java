@@ -100,7 +100,7 @@ public class AppStartRunner implements ApplicationRunner {
     public void startButtonListener() {
         startButton.addListener(e -> {
             log.info("start Listener hit");
-            if (e.state() == DigitalState.HIGH) {
+            if (e.state() == DigitalState.LOW) {
                 log.info("start Button triggered");
                 timer.startTimer();
             }
@@ -108,7 +108,7 @@ public class AppStartRunner implements ApplicationRunner {
 
         stopButton.addListener(e -> {
             log.info("stop Listener hit");
-            if (e.state() == DigitalState.HIGH) {
+            if (e.state() == DigitalState.LOW) {
                 log.info("stop button triggered");
                 timer.stopTimer();
             }
