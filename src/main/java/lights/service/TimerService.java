@@ -56,7 +56,7 @@ public class TimerService {
         seconds = sec;
         nanos = nan;
 
-        producerService.produce(new NodePayload(Constants.IP_ADDRESS, getTimeLeft().toString(), state.name(), LocalTime.of(hr, min, sec, (int) nan).toString()));
+        producerService.produce(new NodePayload(Constants.IP_ADDRESS,"", state.name(), LocalTime.of(hr, min, sec, (int) nan).toString()));
         return LocalTime.of(hr, min, sec, (int) nan).toString();
     }
 
@@ -73,7 +73,7 @@ public class TimerService {
         } else {
             startTime = LocalDateTime.now();
 
-            producerService.produce(new NodePayload(Constants.IP_ADDRESS, getTimeLeft().toString(), state.name(), LocalTime.now().toString()));
+            producerService.produce(new NodePayload(Constants.IP_ADDRESS, "", state.name(), LocalTime.now().toString()));
         }
 
         return LocalTime.now().toString();
