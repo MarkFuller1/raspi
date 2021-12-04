@@ -36,6 +36,6 @@ public class TimerController {
 
     @GetMapping("/left")
     public String elapsed() {
-        return timer.getTimeLeft();
+        return timer.getTimeLeft().toString();
     }
 }

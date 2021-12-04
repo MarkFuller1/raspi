@@ -35,14 +35,13 @@ public class TimerService {
         return LocalTime.now().toString();
     }
 
-    public String getTimeLeft() {
+    public Duration getTimeLeft() {
         if (state == NodeState.STARTED) {
             LocalDateTime endTime = startTime.plusHours(hours).plusMinutes(minutes).plusSeconds(seconds).plusNanos(nanos);
 
-            Duration diff = Duration.between(LocalDateTime.now(), endTime);
-            return diff.toString();
+            return Duration.between(LocalDateTime.now(), endTime);
         }
-        return "timer not started";
+        return null;
     }
 
     public String setTimer(int hr, int min, int sec, long nan) {
@@ -57,7 +56,7 @@ public class TimerService {
         seconds = sec;
         nanos = nan;
 
-        producerService.produce(new NodePayload(Constants.IP_ADDRESS, getTimeLeft(), state.name(), LocalTime.of(hr, min, sec, (int) nan).toString()));
+        producerService.produce(new NodePayload(Constants.IP_ADDRESS, getTimeLeft().toString(), state.name(), LocalTime.of(hr, min, sec, (int) nan).toString()));
         return LocalTime.of(hr, min, sec, (int) nan).toString();
     }
 
@@ -74,7 +73,7 @@ public class TimerService {
         } else {
             startTime = LocalDateTime.now();
 
-            producerService.produce(new NodePayload(Constants.IP_ADDRESS, getTimeLeft(), state.name(), LocalTime.now().toString()));
+            producerService.produce(new NodePayload(Constants.IP_ADDRESS, getTimeLeft().toString(), state.name(), LocalTime.now().toString()));
         }
 
         return LocalTime.now().toString();
@@ -86,7 +85,7 @@ public class TimerService {
 
     public boolean isElapsed() {
         if (state == NodeState.STARTED) {
-            Duration timeLeft = Duration.parse(getTimeLeft());
+            Duration timeLeft = getTimeLeft();
             log.info("Time left: " + timeLeft.toString());
             return timeLeft.isNegative();
         }
@@ -112,7 +111,7 @@ public class TimerService {
             }
         }
 
-        Duration left = Duration.parse(getTimeLeft());
+        Duration left = getTimeLeft();
 
         if (!(left.isNegative())) {
             // payload already matching

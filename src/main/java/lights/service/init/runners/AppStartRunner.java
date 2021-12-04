@@ -86,7 +86,7 @@ public class AppStartRunner implements ApplicationRunner {
                 gpioControllerService.blink(10, 200);
 
                 timer.expired();
-                producerService.produce(new NodePayload(Constants.IP_ADDRESS, timer.getTimeLeft(), timer.getState().name(), NodeState.EXPIRED.getMeaning()));
+                producerService.produce(new NodePayload(Constants.IP_ADDRESS, timer.getTimeLeft().toString(), timer.getState().name(), NodeState.EXPIRED.getMeaning()));
             }
         }, 0, 1, TimeUnit.SECONDS);
 
