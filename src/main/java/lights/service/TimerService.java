@@ -36,7 +36,7 @@ public class TimerService {
     }
 
     public Duration getTimeLeft() {
-        if (state == NodeState.STARTED) {
+        if (state == NodeState.STARTED || state == NodeState.EXPIRED) {
             LocalDateTime endTime = startTime.plusHours(hours).plusMinutes(minutes).plusSeconds(seconds).plusNanos(nanos);
 
             return Duration.between(LocalDateTime.now(), endTime);
