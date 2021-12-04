@@ -23,22 +23,22 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
-@Profile("!local")
+//@Profile("!local")
 @Component
 public class AppStartRunner implements ApplicationRunner {
     @Autowired
     ApplicationContext applicationContext;
 
-    @Autowired
-    GpioControllerService gpioControllerService;
+//    @Autowired
+//    GpioControllerService gpioControllerService;
 
-    @Qualifier(value = "STARTBUTTON")
-    @Autowired
-    DigitalInput startButton;
-
-    @Qualifier(value = "STOPBUTTON")
-    @Autowired
-    DigitalInput stopButton;
+//    @Qualifier(value = "STARTBUTTON")
+//    @Autowired
+//    DigitalInput startButton;
+//
+//    @Qualifier(value = "STOPBUTTON")
+//    @Autowired
+//    DigitalInput stopButton;
 
     @Autowired
     TimerService timer;
@@ -54,7 +54,7 @@ public class AppStartRunner implements ApplicationRunner {
     public void run(ApplicationArguments args) {
 
         //physical representation of startup success
-        gpioControllerService.blink(10, 200);
+//        gpioControllerService.blink(10, 200);
         log.info("Initialization complete");
 
         // tell kafka broker node has started
@@ -83,7 +83,7 @@ public class AppStartRunner implements ApplicationRunner {
         task = timerExecutor.scheduleWithFixedDelay(() -> {
             if (timer.isElapsed()) {
                 log.info("Timer complete");
-                gpioControllerService.blink(10, 200);
+//                gpioControllerService.blink(10, 200);
 
                 timer.expired();
                 producerService.produce(new NodePayload(Constants.IP_ADDRESS, timer.getTimeLeft(), timer.getState().name(), NodeState.EXPIRED.getMeaning()));
@@ -98,20 +98,20 @@ public class AppStartRunner implements ApplicationRunner {
     }
 
     public void startButtonListener() {
-        startButton.addListener(e -> {
-            log.info("start Listener hit");
-            if (e.state() == DigitalState.LOW) {
-                log.info("start Button triggered");
-                timer.startTimer();
-            }
-        });
+//        startButton.addListener(e -> {
+//            log.info("start Listener hit");
+//            if (e.state() == DigitalState.LOW) {
+//                log.info("start Button triggered");
+//                timer.startTimer();
+//            }
+//        });
 
-        stopButton.addListener(e -> {
-            log.info("stop Listener hit");
-            if (e.state() == DigitalState.LOW) {
-                log.info("stop button triggered");
-                timer.stopTimer();
-            }
-        });
+//        stopButton.addListener(e -> {
+//            log.info("stop Listener hit");
+//            if (e.state() == DigitalState.LOW) {
+//                log.info("stop button triggered");
+//                timer.stopTimer();
+//            }
+//        });
     }
 }
