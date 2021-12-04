@@ -15,8 +15,8 @@ public enum NodeState {
     STARTED("The timer has started"),
     DONE("The button was pressed, the operation is complete before the timer expired"),
     EXPIRED("The timer finished before the process was complete"),
-    LATE("The timer expired before the button was pressed");
-
+    LATE("The timer expired before the button was pressed"),
+    RESTARTED("The node was manually rebooted");
     private static final Map<NodeState, List<NodeState>> STATE_DIAGRAM = new HashMap<>() {{
         put(ERROR, List.of(ERROR, BOOTED, IDLE, SET));
         put(BOOTED, List.of(BOOTED, ERROR, IDLE));
