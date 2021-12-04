@@ -119,7 +119,7 @@ public class TimerService {
             state = NodeState.DONE;
         } else if (left.isNegative()) {
             log.info("Stopping timer after expiration");
-            state = NodeState.EXPIRED;
+            state = NodeState.LATE;
         }
 
         NodePayload payload = new NodePayload(Constants.IP_ADDRESS, left.toString(), state.name(), state.getMeaning());
