@@ -96,22 +96,19 @@ public class TimerService {
     public void stopTimer() {
         try {
             // if the state cant be changed to either of these we are in the wrong state
-            NodeState.changeState(state, NodeState.LATE);
-            NodeState.changeState(state, NodeState.DONE);
+            state = NodeState.changeState(state, NodeState.DONE);
+            log.info("Stopping timer before expiration");
         } catch (StateException e) {
             log.error(e.getMessage());
             return;
         }
 
-        Duration left = Duration.parse(getTimeLeft());
-
-        if (!(left.isNegative())) {
-            // payload already matching
-            log.info("Stopping timer before expiration");
-            state = NodeState.DONE;
-        } else if (left.isNegative()) {
+        try {
+            state = NodeState.changeState(state, NodeState.LATE);
             log.info("Stopping timer after expiration");
-            state = NodeState.EXPIRED;
+        } catch (StateException e) {
+            log.error(e.getMessage());
+            return;
         }
 
         NodePayload payload = new NodePayload(Constants.IP_ADDRESS, left.toString(), state.name(), state.getMeaning());
@@ -136,9 +133,9 @@ public class TimerService {
     }
 
     public void idle() {
-        try{
-            state = NodeState.changeState(state,NodeState.IDLE);
-        } catch(StateException e){
+        try {
+            state = NodeState.changeState(state, NodeState.IDLE);
+        } catch (StateException e) {
             log.error(e.getMessage());
         }
     }
