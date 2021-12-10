@@ -1,0 +1,13 @@
+[Unit]
+Description=Raspi GPIO Service
+
+[Service]
+WorkingDirectory=/opt/prod
+ExecStart=/opt/prod/raspi/startup.sh
+User=root
+Type=simple
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
