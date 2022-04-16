@@ -29,6 +29,11 @@ public class TimerController {
         return timer.getSystemTime();
     }
 
+    @PutMapping("/stop")
+    public void stopTimer(){
+        timer.stopTimer();
+    }
+
     @PostMapping("/start")
     public String startTimer() {
         return timer.startTimer();
